@@ -9,4 +9,6 @@ public class MappingConfiguration {
     public PublicationMapper publicationMapper() {
         return new PublicationMapper();
     }
+    @Bean
+    public AdvertisementMapper advertisementMapper(){return new AdvertisementMapper();}
 }

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 @RestController
-@RequestMapping("/publications")
+@RequestMapping("/api/v1/publications")
 public class PublicationController {
     @Autowired
     private PublicationService publicationService;
@@ -30,7 +30,7 @@ public class PublicationController {
     public Page<PublicationResource> getAllPublication(Pageable pageable) {
         return  mapper.modelListToPage(publicationService.getAll() , pageable);
     }
-    @GetMapping("{publicationId}")
+    @GetMapping("/{publicationId}")
     public PublicationResource getPostById(@PathVariable("publicationId") Long publicationId) {
         return mapper.toResource(publicationService.getById(publicationId));
     }

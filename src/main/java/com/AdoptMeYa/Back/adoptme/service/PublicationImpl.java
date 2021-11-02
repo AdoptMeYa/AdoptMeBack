@@ -40,6 +40,7 @@ public class PublicationImpl implements PublicationService{
     @Override
     public Page<Publication> getAll(Pageable pageable) {
         return publicationRepository.findAll(pageable);
+
     }
     @Override
     public Publication getById(Long publicationId) {
