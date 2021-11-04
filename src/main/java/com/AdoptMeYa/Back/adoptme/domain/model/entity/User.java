@@ -48,7 +48,7 @@ public class User {
 
     @NotNull
     @NotBlank
-    private String name;
+        private String name;
 
     @NotNull
     @NotBlank
