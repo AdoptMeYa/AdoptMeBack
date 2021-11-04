@@ -55,7 +55,20 @@ public class AdvertisementImpl implements AdvertisementService {
            throw new ResourceValidationException("Advertisement", violations);
        if(!_advertisementRepository.existsById(advertisementId))
            throw new ResourceNotFoundException("Publication", advertisementId);
-        return _advertisementRepository.findById(advertisementId).map(_advertisementRepository::save).orElseThrow(() -> new ResourceNotFoundException("Advertisement: ", advertisementId));
+
+        return _advertisementRepository.findById(advertisementId).map(
+              advertisement -> {
+                  return _advertisementRepository.save(
+                          advertisement.withTitle(request.getTitle())
+                                  .withDescription(request.getDescription())
+                                  .withUser_id(request.getUser_id())
+                                  .withDiscount(request.getDiscount())
+                                  .withUrl(request.getUrl())
+                                  .withPromoted(request.getPromoted())
+
+                          );
+              }
+        ).orElseThrow(() -> new ResourceNotFoundException("Advertisement: ", advertisementId));
     }
 
     @Override
