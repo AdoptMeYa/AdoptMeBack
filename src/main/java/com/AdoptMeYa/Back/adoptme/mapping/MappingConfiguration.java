@@ -15,4 +15,6 @@ public class MappingConfiguration {
     public PetMapper petMapper(){return new PetMapper();}
     @Bean
     public DistrictMapper districtMapper(){return new DistrictMapper();}
+    @Bean
+    public UserMapper userMapper(){return new UserMapper();}
 }
