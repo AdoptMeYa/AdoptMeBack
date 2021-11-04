@@ -13,4 +13,6 @@ public class MappingConfiguration {
     public AdvertisementMapper advertisementMapper(){return new AdvertisementMapper();}
     @Bean
     public PetMapper petMapper(){return new PetMapper();}
+    @Bean
+    public DistrictMapper districtMapper(){return new DistrictMapper();}
 }
