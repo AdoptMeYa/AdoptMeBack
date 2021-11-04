@@ -21,7 +21,6 @@ public class Advertisement extends AuditModel {
     private Long id;
 
     @NotNull
-    @NotBlank
     private Long userId;
 
 
@@ -38,7 +37,6 @@ public class Advertisement extends AuditModel {
     private String description;
 
     @NotNull
-    @NotBlank
     @Column(unique = false)
     private Float discount;
 
@@ -49,7 +47,6 @@ public class Advertisement extends AuditModel {
     private String urlToImage;
 
     @NotNull
-    @NotBlank
     @Column(unique = false)
     private Boolean promoted;
 

@@ -2,12 +2,15 @@ package com.AdoptMeYa.Back.adoptme.resource;
 
 import javax.validation.constraints.NotNull;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class UpdateAdvertisementResource {
     private Long id;
     @NotNull
     private Long userId;
-    @NotNull
-    private String dateTime;
     @NotNull
     private String title;
     @NotNull

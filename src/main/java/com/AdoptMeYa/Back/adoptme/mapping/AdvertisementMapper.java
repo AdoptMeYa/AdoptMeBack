@@ -1,7 +1,6 @@
 package com.AdoptMeYa.Back.adoptme.mapping;
 
 import com.AdoptMeYa.Back.adoptme.domain.model.entity.Advertisement;
-import com.AdoptMeYa.Back.adoptme.domain.model.entity.Publication;
 import com.AdoptMeYa.Back.adoptme.resource.*;
 import com.AdoptMeYa.Back.shared.mapping.EnhancedModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

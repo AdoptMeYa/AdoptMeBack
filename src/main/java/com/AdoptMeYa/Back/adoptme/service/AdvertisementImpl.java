@@ -5,6 +5,8 @@ import com.AdoptMeYa.Back.adoptme.domain.persistence.AdvertisementRepository;
 import com.AdoptMeYa.Back.adoptme.domain.service.AdvertisementService;
 import com.AdoptMeYa.Back.shared.exception.ResourceNotFoundException;
 import com.AdoptMeYa.Back.shared.exception.ResourceValidationException;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -13,20 +15,16 @@ import org.springframework.stereotype.Service;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
-import javax.xml.bind.ValidationException;
 import java.util.List;
 import java.util.Set;
 
 @Service
 public class AdvertisementImpl implements AdvertisementService {
-private static final String ENTITY="Comment";
-private final AdvertisementRepository _advertisementRepository;
-private final Validator _validator;
+    @Autowired
+    private AdvertisementRepository _advertisementRepository;
+    @Autowired
+    private Validator _validator;
 
-public AdvertisementImpl(AdvertisementRepository advertisementRepository,Validator validator){
-    _advertisementRepository=advertisementRepository;
-    _validator=validator;
-}
     @Override
     public Advertisement listAdvertisementsByUserId(Long userId) {
         return _advertisementRepository.getById(userId);

@@ -1,7 +1,6 @@
 package com.AdoptMeYa.Back.adoptme.service;
 
 import com.AdoptMeYa.Back.adoptme.domain.model.entity.Pet;
-import com.AdoptMeYa.Back.adoptme.domain.model.entity.Publication;
 import com.AdoptMeYa.Back.adoptme.domain.persistence.PetRepository;
 import com.AdoptMeYa.Back.adoptme.domain.service.PetService;
 import com.AdoptMeYa.Back.shared.exception.ResourceNotFoundException;
@@ -55,7 +54,15 @@ public class PetImpl implements PetService {
             throw new ResourceNotFoundException("Pet", id);
 
         return petRepository.findById(id).map(pet -> {
-            return petRepository.save(request);}).orElseThrow(() -> new ResourceNotFoundException("Pet", id ));
+            return petRepository.save(
+                pet.withAge(request.getAge())
+                .withAttention(request.getAttention())
+                .withIsAdopted(request.getIsAdopted())
+                .withName(request.getName())
+                .withRace(request.getRace())
+                .withType(request.getType())
+                
+            );}).orElseThrow(() -> new ResourceNotFoundException("Pet", id ));
     }
 
     @Override

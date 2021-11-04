@@ -2,7 +2,6 @@ package com.AdoptMeYa.Back.adoptme.api;
 
 import com.AdoptMeYa.Back.adoptme.domain.service.PetService;
 import com.AdoptMeYa.Back.adoptme.mapping.PetMapper;
-import com.AdoptMeYa.Back.adoptme.mapping.PublicationMapper;
 import com.AdoptMeYa.Back.adoptme.resource.CreatePetResource;
 import com.AdoptMeYa.Back.adoptme.resource.PetResource;
 import com.AdoptMeYa.Back.adoptme.resource.UpdatePetResource;
@@ -13,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/pets")
+@RequestMapping("/pets")
 public class PetController {
     @Autowired
     private PetService petService;

@@ -2,7 +2,6 @@ package com.AdoptMeYa.Back.adoptme.resource;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Setter

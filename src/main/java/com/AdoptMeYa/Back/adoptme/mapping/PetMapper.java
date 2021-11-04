@@ -1,11 +1,9 @@
 package com.AdoptMeYa.Back.adoptme.mapping;
 
 import com.AdoptMeYa.Back.adoptme.domain.model.entity.Pet;
-import com.AdoptMeYa.Back.adoptme.domain.model.entity.Publication;
 import com.AdoptMeYa.Back.adoptme.resource.CreatePetResource;
 import com.AdoptMeYa.Back.adoptme.resource.PetResource;
 import com.AdoptMeYa.Back.adoptme.resource.UpdatePetResource;
-import com.AdoptMeYa.Back.adoptme.resource.UpdatePublicationResource;
 import com.AdoptMeYa.Back.shared.mapping.EnhancedModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
