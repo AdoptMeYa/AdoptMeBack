@@ -10,15 +10,15 @@ import lombok.Setter;
 public class UpdateAdvertisementResource {
     private Long id;
     @NotNull
-    private Long userId;
+    private Long user_id;
     @NotNull
     private String title;
     @NotNull
     private String description;
-    @NotNull
+
     private Float discount;
-    @NotNull
-    private String urlToImage;
-    @NotNull
+
+    private String url;
+
     private Boolean promoted;
 }

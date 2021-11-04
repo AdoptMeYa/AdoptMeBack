@@ -17,7 +17,7 @@ public class AdvertisementController {
     private AdvertisementMapper mapper;
 
     @GetMapping
-    public Page<AdvertisementResource> getAllPublication(Pageable pageable) {
+    public Page<AdvertisementResource> getAll(Pageable pageable) {
         return  mapper.modelListToPage(advertisementService.ListAllAdvertisements(), pageable);
     }
 
@@ -29,6 +29,7 @@ public class AdvertisementController {
     public AdvertisementResource createPost(@RequestBody CreateAdvertisementResource request) {
         return mapper.toResource(advertisementService.create(mapper.toModel(request)));
     }
+
     @PutMapping("/{advertisementId}")
     public AdvertisementResource updatePost(@PathVariable Long advertisementId, @RequestBody UpdateAdvertisementResource request) {
         return mapper.toResource(advertisementService.update(advertisementId, mapper.toModel(request)));

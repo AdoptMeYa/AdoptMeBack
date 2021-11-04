@@ -19,34 +19,28 @@ public class Advertisement extends AuditModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
+    private Long user_id;
 
     @NotNull
-    private Long userId;
-
-
-    @NotNull
-    @NotBlank
     @Size(max = 100)
     @Column(unique = false)
     private String title;
 
     @NotNull
-    @NotBlank
     @Size(max = 100)
     @Column(unique = false)
     private String description;
 
-    @NotNull
+
     @Column(unique = false)
     private Float discount;
 
-    @NotNull
-    @NotBlank
+
     @Size(max = 300)
     @Column(unique = false)
-    private String urlToImage;
+    private String url;
 
-    @NotNull
     @Column(unique = false)
     private Boolean promoted;
 
