@@ -10,7 +10,7 @@ server:
       context-path: /api/v1
 spring:
     datasource:
-        password: mysql
+        password: PASSWORDPASSWORD
         url: jdbc:mysql://localhost:3306/demo?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
         username: root
     jpa:
