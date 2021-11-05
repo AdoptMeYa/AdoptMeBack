@@ -1,8 +1,6 @@
 package com.AdoptMeYa.Back.adoptme.mapping;
 
-import com.AdoptMeYa.Back.adoptme.domain.model.entity.District;
 import com.AdoptMeYa.Back.adoptme.domain.model.entity.Notification;
-import com.AdoptMeYa.Back.adoptme.domain.model.entity.Pet;
 import com.AdoptMeYa.Back.adoptme.resource.*;
 import com.AdoptMeYa.Back.shared.mapping.EnhancedModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

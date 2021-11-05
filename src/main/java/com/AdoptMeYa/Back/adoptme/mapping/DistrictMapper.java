@@ -3,7 +3,6 @@ package com.AdoptMeYa.Back.adoptme.mapping;
 import com.AdoptMeYa.Back.adoptme.domain.model.entity.District;
 import com.AdoptMeYa.Back.adoptme.resource.CreateDistrictResource;
 import com.AdoptMeYa.Back.adoptme.resource.DistrictResource;
-import com.AdoptMeYa.Back.adoptme.resource.PetResource;
 import com.AdoptMeYa.Back.adoptme.resource.UpdateDistrictResource;
 import com.AdoptMeYa.Back.shared.mapping.EnhancedModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

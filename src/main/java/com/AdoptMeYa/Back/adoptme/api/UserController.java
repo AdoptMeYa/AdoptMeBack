@@ -21,7 +21,7 @@ public class UserController {
 
 
     @GetMapping
-    public Page<UserResource> getAll(Pageable pageable) {
+    public Page<UserResource> getAllPet(Pageable pageable) {
         return  mapper.modelListToPage(userService.getAll(), pageable);
     }
 

@@ -26,8 +26,8 @@ public class NotificationController {
         return  mapper.modelListToPage(notificationService.getAll() , pageable);
     }
     @GetMapping("/{notificationId}")
-    public NotificationResource getNotificationById(@PathVariable("notificationId") Long Id) {
-        return mapper.toResource(notificationService.getById(Id));
+    public NotificationResource getNotificationById(@PathVariable("notificationId") Long notificationId) {
+        return mapper.toResource(notificationService.getById(notificationId));
     }
     @PostMapping
     public NotificationResource createNotification(@RequestBody CreateNotification request) {
@@ -36,12 +36,12 @@ public class NotificationController {
     }
 
     @PutMapping("{notificationId}")
-    public NotificationResource updateNotification(@PathVariable Long publicationId, @RequestBody UpdateNotificationResource request) {
-        return mapper.toResource(notificationService.update(publicationId, mapper.toModel(request)));
+    public NotificationResource updateNotification(@PathVariable Long notificationId, @RequestBody UpdateNotificationResource request) {
+        return mapper.toResource(notificationService.update(notificationId, mapper.toModel(request)));
     }
 
     @DeleteMapping("{notificationId}")
-    public ResponseEntity<?> deleteNotification(@PathVariable Long Id) {
-        return notificationService.delete(Id);
+    public ResponseEntity<?> deleteNotification(@PathVariable Long notificationId) {
+        return notificationService.delete(notificationId);
     }
 }

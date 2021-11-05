@@ -13,8 +13,6 @@ import com.AdoptMeYa.Back.shared.exception.ResourceNotFoundException;
 import com.AdoptMeYa.Back.shared.exception.ResourceValidationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -67,12 +65,12 @@ public class Notificationlmpl implements NotificationService {
             return notificationRepository.save(
 
                     notification.withApproved(request.getApproved())
-                            .withId(request.getId())
                             .withMessage(request.getMessage())
-                            .withUser_At(request.getUser_At())
-                            .withUser_Id(request.getUser_Id())
-                            .withPublication_id(request.getPublication_id())
+                            .withUseridAt(request.getUseridAt())
+                            .withUerIdFrom(request.getUerIdFrom())
+                            .withPublicationId(request.getPublicationId())
+                            .withApproved(request.getApproved())
 
-                    );}).orElseThrow(() -> new ResourceNotFoundException("Pet", Id ));
+                    );}).orElseThrow(() -> new ResourceNotFoundException("Notification", Id ));
     }
 }

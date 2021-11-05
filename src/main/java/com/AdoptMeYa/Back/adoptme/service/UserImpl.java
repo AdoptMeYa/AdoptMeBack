@@ -55,8 +55,20 @@ public class UserImpl implements UserService {
         if(!userRepository.existsById(id))
             throw new ResourceNotFoundException("User", id);
 
-        return userRepository.findById(id).map(user -> {
-            return userRepository.save(request);}).orElseThrow(() -> new ResourceNotFoundException("User", id ));
+        return userRepository.findById(id).map(
+            user -> {
+                return userRepository.save(
+                    user.withEmail(request.getEmail())
+                    .withPassword(request.getPassword())
+                    .withType(request.getType())
+                    .withUser(request.getUser())
+                    .withRuc(request.getRuc())
+                    .withDni(request.getDni())
+                    .withPhone(request.getPhone())
+                    .withName(request.getName())
+                    .withLastname(request.getLastname()))
+                                        
+                    ;}).orElseThrow(() -> new ResourceNotFoundException("User", id ));
     }
 
     @Override

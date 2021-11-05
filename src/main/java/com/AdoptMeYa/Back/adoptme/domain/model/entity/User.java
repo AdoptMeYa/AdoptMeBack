@@ -32,6 +32,7 @@ public class User {
 
     @NotNull
     @NotBlank
+    @Column(name = "userType")
     private String user;
 
     @NotNull
@@ -48,7 +49,7 @@ public class User {
 
     @NotNull
     @NotBlank
-        private String name;
+    private String name;
 
     @NotNull
     @NotBlank

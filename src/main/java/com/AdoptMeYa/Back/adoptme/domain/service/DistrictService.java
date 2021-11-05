@@ -2,12 +2,10 @@ package com.AdoptMeYa.Back.adoptme.domain.service;
 
 import com.AdoptMeYa.Back.adoptme.domain.model.entity.District;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import java.util.List;
 
-@Service
 public interface DistrictService {
     List<District> getAll();
 
