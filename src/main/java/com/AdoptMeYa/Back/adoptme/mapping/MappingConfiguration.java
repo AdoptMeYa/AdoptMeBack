@@ -17,4 +17,6 @@ public class MappingConfiguration {
     public DistrictMapper districtMapper(){return new DistrictMapper();}
     @Bean
     public UserMapper userMapper(){return new UserMapper();}
+    @Bean
+    public NotificationMapper notificationMapper(){return  new NotificationMapper();}
 }
