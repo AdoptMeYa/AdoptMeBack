@@ -1,21 +1,29 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    properties: 
+      hibernate:
+        ddl-auto: update
+        jdbc:
+          lob:
+            "[non_contextual_creation]": true
+    generate-ddl: true
+
+            
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost/adoptme
+    username: postgres
+    password: password
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1
 logging:
     level:
         org:
             hibernate:
                 SQL: DEBUG
                 type: TRACE
-server:
-    port: 8080
-    servlet:
-      context-path: /api/v1
-spring:
-    datasource:
-        password: PASSWORDPASSWORD
-        url: jdbc:mysql://localhost:3306/demo?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
-        username: root
-    jpa:
-        hibernate:
-            ddl-auto: update
-        properties:
-            hibernate:
-                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
