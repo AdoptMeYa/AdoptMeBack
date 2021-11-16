@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotNull;
+
+import com.AdoptMeYa.Back.adoptme.domain.model.entity.District;
 @Setter
 @Getter
 public class CreateUserResource {
@@ -33,4 +35,7 @@ public class CreateUserResource {
 
     @NotNull
     private String lastname;
+
+    @NotNull
+    private District district;
 }

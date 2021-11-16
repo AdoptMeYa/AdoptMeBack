@@ -1,5 +1,7 @@
 package com.AdoptMeYa.Back.adoptme.resource;
 
+import com.AdoptMeYa.Back.adoptme.domain.model.entity.District;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,4 +20,5 @@ public class UserResource {
     private String phone;
     private String name;
     private String lastname;
+    private District district;
 }

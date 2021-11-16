@@ -7,7 +7,6 @@ import lombok.Setter;
 @Setter
 public class AdvertisementResource {
     private Long id;
-    private Long user_id;
     private String title;
     private String description;
     private Float discount;

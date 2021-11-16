@@ -10,6 +10,5 @@ public class NotificationResource {
     private Long uerIdFrom;
     private Long useridAt;
     private String message;
-    private Long publicationId;
     private Boolean approved;
 }

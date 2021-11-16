@@ -2,6 +2,8 @@ package com.AdoptMeYa.Back.adoptme.domain.model.entity;
 
 import lombok.*;
 
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -55,6 +57,12 @@ public class User {
     @NotBlank
     private String lastname;
 
+    @OneToOne(optional = false)
+    @JoinColumn(name = "district_id", nullable = false)
+    private District district;
+
+    @OneToMany
+    private List<Publication> publications;
 
 
 }

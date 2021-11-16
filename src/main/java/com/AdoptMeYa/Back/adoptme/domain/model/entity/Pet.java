@@ -42,4 +42,12 @@ public class Pet extends AuditModel {
     @NotBlank
     private String isAdopted;
 
+    @NotNull
+    @NotBlank
+    private String gender;
+
+    @OneToOne(optional = true)
+    @JoinColumn(name = "publication_id", nullable = true)
+    private Publication publication;
+
 }

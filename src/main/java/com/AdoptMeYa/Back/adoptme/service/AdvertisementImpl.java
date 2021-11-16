@@ -61,7 +61,6 @@ public class AdvertisementImpl implements AdvertisementService {
                   return _advertisementRepository.save(
                           advertisement.withTitle(request.getTitle())
                                   .withDescription(request.getDescription())
-                                  .withUser_id(request.getUser_id())
                                   .withDiscount(request.getDiscount())
                                   .withUrl(request.getUrl())
                                   .withPromoted(request.getPromoted())

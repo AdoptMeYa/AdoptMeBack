@@ -68,7 +68,6 @@ public class Notificationlmpl implements NotificationService {
                             .withMessage(request.getMessage())
                             .withUseridAt(request.getUseridAt())
                             .withUerIdFrom(request.getUerIdFrom())
-                            .withPublicationId(request.getPublicationId())
                             .withApproved(request.getApproved())
 
                     );}).orElseThrow(() -> new ResourceNotFoundException("Notification", Id ));

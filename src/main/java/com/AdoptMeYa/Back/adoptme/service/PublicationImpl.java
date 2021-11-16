@@ -59,7 +59,11 @@ public class PublicationImpl implements PublicationService{
             throw new ResourceNotFoundException("Publication", publicationId);
 
         return publicationRepository.findById(publicationId).map(publication -> {
-            return publicationRepository.save(publication.withComment(request.getComment()));
+            return publicationRepository.save(
+                publication.withComment(request.getComment())
+                .withPet(request.getPet())
+                .withUser(request.getUser())
+                );
  
         }).orElseThrow(() -> new ResourceNotFoundException("Publication", publicationId ));
     }

@@ -4,6 +4,8 @@ import lombok.Setter;
 
 import javax.validation.constraints.NotNull;
 
+import com.AdoptMeYa.Back.adoptme.domain.model.entity.Publication;
+
 @Setter
 @Getter
 public class CreatePetResource {
@@ -25,4 +27,9 @@ public class CreatePetResource {
 
     @NotNull
     private String isAdopted;
+
+    @NotNull
+    private String gender;
+
+    private Publication publication;
 }
