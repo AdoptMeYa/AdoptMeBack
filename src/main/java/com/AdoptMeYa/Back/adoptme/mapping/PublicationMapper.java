@@ -27,6 +27,7 @@ public class PublicationMapper implements Serializable {
     }
 
     public Publication toModel(CreatePublicationResource resource) {
+
         return mapper.map(resource, Publication.class);
     }
 

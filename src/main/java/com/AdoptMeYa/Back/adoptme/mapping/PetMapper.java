@@ -32,4 +32,7 @@ public class PetMapper implements Serializable {
         return mapper.map(resource, Pet.class);
     }
 
+    public List<PetResource> toListResource(List<Pet> modelList){
+        return mapper.mapList(modelList, PetResource.class);
+    }
 }

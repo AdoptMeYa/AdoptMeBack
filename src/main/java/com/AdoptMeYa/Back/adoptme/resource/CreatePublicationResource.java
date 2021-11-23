@@ -13,6 +13,12 @@ import lombok.Setter;
 public class CreatePublicationResource {
     @NotNull
     private String comment;
+//    @NotNull
+//    private int userId;
+//    @NotNull
+//    private int petId;
+
+
     @NotNull
     private User user;
     private Pet pet;

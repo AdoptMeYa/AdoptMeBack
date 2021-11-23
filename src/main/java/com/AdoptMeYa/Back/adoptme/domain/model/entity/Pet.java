@@ -50,4 +50,7 @@ public class Pet extends AuditModel {
     @JoinColumn(name = "publication_id", nullable = true)
     private Publication publication;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 }

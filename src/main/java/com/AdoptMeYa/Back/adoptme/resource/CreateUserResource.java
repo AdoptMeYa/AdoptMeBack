@@ -3,6 +3,8 @@ package com.AdoptMeYa.Back.adoptme.resource;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import com.AdoptMeYa.Back.adoptme.domain.model.entity.District;
@@ -10,7 +12,7 @@ import com.AdoptMeYa.Back.adoptme.domain.model.entity.District;
 @Getter
 public class CreateUserResource {
     @NotNull
-    private String email;
+        private String email;
 
     @NotNull
     private String password;
@@ -37,5 +39,6 @@ public class CreateUserResource {
     private String lastname;
 
     @NotNull
-    private District district;
+    private int districtId;
+
 }

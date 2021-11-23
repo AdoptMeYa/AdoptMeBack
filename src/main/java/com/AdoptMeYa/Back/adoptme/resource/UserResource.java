@@ -5,6 +5,9 @@ import com.AdoptMeYa.Back.adoptme.domain.model.entity.District;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 
 @Getter
@@ -20,5 +23,5 @@ public class UserResource {
     private String phone;
     private String name;
     private String lastname;
-    private District district;
+    private int districtId;
 }
