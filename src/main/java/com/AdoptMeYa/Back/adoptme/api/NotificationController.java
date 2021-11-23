@@ -17,7 +17,7 @@ public class NotificationController {
     @Autowired
     private NotificationMapper mapper;
     @GetMapping
-    public Page<NotificationResource> getAllPublication(Pageable pageable) {
+    public Page<NotificationResource> getAllNotifications(Pageable pageable) {
         return  mapper.modelListToPage(notificationService.getAll() , pageable);
     }
     @GetMapping("/{notificationId}")

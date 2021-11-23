@@ -19,4 +19,5 @@ public class MappingConfiguration {
     public UserMapper userMapper(){return new UserMapper();}
     @Bean
     public NotificationMapper notificationMapper(){return  new NotificationMapper();}
+
 }

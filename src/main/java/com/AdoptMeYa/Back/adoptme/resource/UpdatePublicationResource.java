@@ -14,7 +14,8 @@ public class UpdatePublicationResource {
     private Long id;
     @NotNull
     private String comment;
-
-    private Pet pet;
-    private User user;
+    @NotNull
+    private int userId;
+    @NotNull
+    private int petId;
 }
