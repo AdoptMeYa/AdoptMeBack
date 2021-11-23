@@ -37,10 +37,20 @@ public class Publication extends AuditModel{
     private String comment;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @NotNull
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @OneToOne(optional = true)
-    @JoinColumn(name = "pet_id", nullable = true)
+    @OneToOne(optional = false)
+    @NotNull
+    @JoinColumn(name = "pet_id", nullable = false)
     private Pet pet;
+
+//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//    @JoinColumn(name = "user_id", nullable = false)
+//    private User user;
+//
+//    @OneToOne(optional = true)
+//    @JoinColumn(name = "pet_id", nullable = true)
+//    private Pet pet;
 }

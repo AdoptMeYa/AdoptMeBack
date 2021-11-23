@@ -31,5 +31,8 @@ public class CreatePetResource {
     @NotNull
     private String gender;
 
+    @NotNull
+    private int userId;
+
     private Publication publication;
 }

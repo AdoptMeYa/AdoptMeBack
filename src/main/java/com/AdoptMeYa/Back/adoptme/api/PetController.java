@@ -11,6 +11,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/pets")
 public class PetController {
@@ -22,8 +25,8 @@ public class PetController {
 
 
     @GetMapping
-    public Page<PetResource> getAll(Pageable pageable) {
-        return  mapper.modelListToPage(petService.getAll(), pageable);
+    public List<PetResource> getAll() {
+        return  mapper.toListResource(petService.getAll());
     }
 
     @PostMapping

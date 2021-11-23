@@ -12,6 +12,6 @@ public class CreateDistrictResource {
     @NotNull
     private String district;
     @NotNull
-    private String description;
+    private String description; 
 
 }

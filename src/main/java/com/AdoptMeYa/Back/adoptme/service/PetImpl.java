@@ -73,4 +73,10 @@ public class PetImpl implements PetService {
 
         }).orElseThrow(() -> new ResourceNotFoundException("Pet", id));
     }
+
+    @Override
+    public Pet ReadPetsByPublicationId(Long id){
+        return petRepository.ReadPetsByPublicationId(id);
+    }
+
 }

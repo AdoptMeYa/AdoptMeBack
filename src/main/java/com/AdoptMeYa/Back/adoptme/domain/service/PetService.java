@@ -21,4 +21,5 @@ public interface PetService {
 
     ResponseEntity<?> delete(Long id);
 
+    Pet ReadPetsByPublicationId(Long id);
 }

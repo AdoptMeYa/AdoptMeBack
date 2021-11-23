@@ -1,5 +1,6 @@
 package com.AdoptMeYa.Back.adoptme.api;
 
+import com.AdoptMeYa.Back.adoptme.domain.model.entity.User;
 import com.AdoptMeYa.Back.adoptme.domain.service.UserService;
 import com.AdoptMeYa.Back.adoptme.mapping.UserMapper;
 import com.AdoptMeYa.Back.adoptme.resource.*;
@@ -9,7 +10,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
+
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -19,11 +23,11 @@ public class UserController {
     @Autowired
     private UserMapper mapper;
 
-
     @GetMapping
-    public Page<UserResource> getAllPet(Pageable pageable) {
-        return  mapper.modelListToPage(userService.getAll(), pageable);
+    public List<UserResource> getAllPet() {
+        return mapper.toListResource(userService.getAll());
     }
+
 
     @PostMapping
     public UserResource createPet(@RequestBody CreateUserResource request){
@@ -44,8 +48,5 @@ public class UserController {
     public ResponseEntity<?> deletePost(@PathVariable Long id) {
         return userService.delete(id);
     }
-
-
-
 
 }

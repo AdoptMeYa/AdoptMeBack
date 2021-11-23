@@ -57,12 +57,10 @@ public class User {
     @NotBlank
     private String lastname;
 
-    @OneToOne(optional = false)
-    @JoinColumn(name = "district_id", nullable = false)
+    @ManyToOne(optional=false)
+    @NotNull
+    @JoinColumn(name= "district_id")
     private District district;
-
-    @OneToMany
-    private List<Publication> publications;
 
 
 }
