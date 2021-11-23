@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 public class EnhancedModelMapper extends ModelMapper {
     public EnhancedModelMapper() {
         super();
+        getConfiguration().setAmbiguityIgnored(true);
     }
 
     public <S, T> List<T> mapList(List<S> sourceList, Class<T> targetClass) {

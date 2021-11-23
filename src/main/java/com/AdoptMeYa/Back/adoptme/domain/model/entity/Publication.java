@@ -28,7 +28,7 @@ import lombok.With;
 @NoArgsConstructor
 @With
 @Table(name = "publications")
-public class Publication extends AuditModel{
+public class Publication{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -41,7 +41,7 @@ public class Publication extends AuditModel{
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @OneToOne(optional = false)
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
     @NotNull
     @JoinColumn(name = "pet_id", nullable = false)
     private Pet pet;

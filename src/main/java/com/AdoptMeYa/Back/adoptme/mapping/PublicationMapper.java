@@ -17,6 +17,7 @@ public class PublicationMapper implements Serializable {
     @Autowired
     EnhancedModelMapper mapper;
 
+
     // Object Mapping
     public PublicationResource toResource(Publication model) {
         return mapper.map(model, PublicationResource.class);
@@ -27,7 +28,6 @@ public class PublicationMapper implements Serializable {
     }
 
     public Publication toModel(CreatePublicationResource resource) {
-
         return mapper.map(resource, Publication.class);
     }
 

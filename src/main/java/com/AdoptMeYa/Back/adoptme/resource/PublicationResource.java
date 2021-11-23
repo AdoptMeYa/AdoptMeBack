@@ -8,4 +8,6 @@ import lombok.Setter;
 public class PublicationResource {
     private Long id;
     private String comment;
+    private int userId;
+    private int petId;
 }

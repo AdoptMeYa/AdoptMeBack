@@ -29,6 +29,11 @@ public class PetController {
         return  mapper.toListResource(petService.getAll());
     }
 
+    @GetMapping("?publicationid={id}")
+    public PetResource ReadPetsByPublicationId(@PathVariable("id") Long id) {
+        return  mapper.toResource(petService.ReadPetsByPublicationId(id));
+    }
+
     @PostMapping
     public PetResource createPet(@RequestBody CreatePetResource request){
         return mapper.toResource(petService.create(mapper.toModel(request)));
