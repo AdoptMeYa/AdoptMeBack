@@ -1,6 +1,7 @@
 package com.AdoptMeYa.Back.adoptme.mapping;
 
 import com.AdoptMeYa.Back.adoptme.domain.model.entity.Advertisement;
+import com.AdoptMeYa.Back.adoptme.domain.model.entity.Pet;
 import com.AdoptMeYa.Back.adoptme.resource.*;
 import com.AdoptMeYa.Back.shared.mapping.EnhancedModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,8 @@ public class AdvertisementMapper {
 
     public Advertisement toModel(UpdateAdvertisementResource resource) {
         return _mapper.map(resource, Advertisement.class);
+    }
+    public List<AdvertisementResource> toListResource(List<Advertisement> modelList){
+        return _mapper.mapList(modelList, AdvertisementResource.class);
     }
 }
