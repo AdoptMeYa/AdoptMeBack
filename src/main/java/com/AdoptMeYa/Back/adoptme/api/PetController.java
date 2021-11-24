@@ -33,8 +33,8 @@ public class PetController {
     }
 
     @GetMapping("/publicationId={id}")
-    public Collection<Pet> ReadPetsByPublicationId(@PathVariable("id") Long id) {
-        return  petService.ReadPetsByPublicationId(id);
+    public List<PetResource> ReadPetsByPublicationId(@PathVariable("id") Long id) {
+        return  mapper.toListResource(petService.ReadPetsByPublicationId(id));
     }
 
     @PostMapping

@@ -7,12 +7,13 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
+import java.util.List;
 
 @Repository
 public interface PetRepository extends JpaRepository<Pet, Long> {
 
-
     @Query(value =
-            " SELECT r FROM Pet r WHERE r.id = 1")
-    Collection<Pet> ReadPetsByPublicationId(@Param("id")Long id);
+            " SELECT pe FROM Pet pe INNER JOIN Publication pu " +
+                    "on pe.publication.id = pu.id  WHERE pu.id = :id")
+    List<Pet> ReadPetsByPublicationId(@Param("id")Long id);
 }

@@ -10,6 +10,6 @@ import lombok.Setter;
 public class PublicationResource {
     private Long id;
     private String comment;
-    private User user;
-    private Pet pet;
+    private int userId;
+    private int petId;
 }

@@ -13,9 +13,9 @@ spring:
             
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost/adoptme
+    url: jdbc:postgresql://localhost/adoptmee
     username: postgres
-    password: 12345
+    password: postgres
 
 server:
   port: 8080

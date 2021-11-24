@@ -17,6 +17,6 @@ public class PetResource {
     private Integer age;
     private String isAdopted;
     private String gender;
-    private User user;
-    private Publication publication;
+    private Long userId;
+    private Long publicationId;
 }

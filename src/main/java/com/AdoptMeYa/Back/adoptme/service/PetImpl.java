@@ -76,7 +76,8 @@ public class PetImpl implements PetService {
     }
 
     @Override
-    public Collection<Pet> ReadPetsByPublicationId(Long id){
+    public List<Pet> ReadPetsByPublicationId(Long id){
+
         return petRepository.ReadPetsByPublicationId(id);
     }
 
