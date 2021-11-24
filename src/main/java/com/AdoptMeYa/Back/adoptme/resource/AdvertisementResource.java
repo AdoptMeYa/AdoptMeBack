@@ -12,4 +12,5 @@ public class AdvertisementResource {
     private Float discount;
     private String url;
     private Boolean promoted;
+    private int userId;
 }
