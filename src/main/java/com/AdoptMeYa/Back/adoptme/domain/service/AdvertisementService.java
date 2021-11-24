@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 public interface AdvertisementService {
-    Advertisement listAdvertisementsByUserId(Long userId);
+    List<Advertisement> listAdvertisementsByUserId(Long userId);
     Page<Advertisement> listAdvertisements(Pageable pageable);
     ResponseEntity<?> delete(Long advertisementId);
     Advertisement create(Advertisement advertisement);

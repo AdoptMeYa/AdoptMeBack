@@ -26,8 +26,8 @@ public class AdvertisementImpl implements AdvertisementService {
     private Validator _validator;
 
     @Override
-    public Advertisement listAdvertisementsByUserId(Long userId) {
-        return _advertisementRepository.getById(userId);
+    public List<Advertisement> listAdvertisementsByUserId(Long userId) {
+        return _advertisementRepository.ListAdvertisementByUserId(userId);
     }
 
     @Override

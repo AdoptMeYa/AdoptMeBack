@@ -7,6 +7,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/advertisements")
@@ -25,7 +28,10 @@ public class AdvertisementController {
     public AdvertisementResource getAdvertisementById(@PathVariable("advertisementId") Long advertisementId) {
         return mapper.toResource(advertisementService.getById(advertisementId));
     }
-
+    @GetMapping("/userId={id}")
+    public List<AdvertisementResource> ListAdvertisementsByUserId(@PathVariable("id") Long id) {
+        return  mapper.toListResource(advertisementService.listAdvertisementsByUserId(id));
+    }
     @PostMapping
     public AdvertisementResource createPost(@RequestBody CreateAdvertisementResource request) {
         return mapper.toResource(advertisementService.create(mapper.toModel(request)));
