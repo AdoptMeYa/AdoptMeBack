@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 
+import java.util.Collection;
 import java.util.List;
 
 
@@ -21,5 +22,5 @@ public interface PetService {
 
     ResponseEntity<?> delete(Long id);
 
-    Pet ReadPetsByPublicationId(Long id);
+    Collection<Pet> ReadPetsByPublicationId(Long id);
 }

@@ -2,6 +2,7 @@ package com.AdoptMeYa.Back.adoptme.domain.model.entity;
 
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "users")
 public class User {
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -61,4 +63,7 @@ public class User {
     @NotNull
     @JoinColumn(name= "district_id")
     private District district;
+
+
+
 }

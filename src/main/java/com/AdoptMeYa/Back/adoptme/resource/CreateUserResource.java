@@ -39,6 +39,6 @@ public class CreateUserResource {
     private String lastname;
 
     @NotNull
-    private int districtId;
+    private District district;
 
 }

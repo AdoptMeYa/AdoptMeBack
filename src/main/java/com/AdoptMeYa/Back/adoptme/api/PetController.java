@@ -1,18 +1,21 @@
 package com.AdoptMeYa.Back.adoptme.api;
 
+import com.AdoptMeYa.Back.adoptme.domain.model.entity.Pet;
 import com.AdoptMeYa.Back.adoptme.domain.service.PetService;
 import com.AdoptMeYa.Back.adoptme.mapping.PetMapper;
 import com.AdoptMeYa.Back.adoptme.resource.CreatePetResource;
 import com.AdoptMeYa.Back.adoptme.resource.PetResource;
 import com.AdoptMeYa.Back.adoptme.resource.UpdatePetResource;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
-
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/pets")
@@ -29,9 +32,9 @@ public class PetController {
         return  mapper.toListResource(petService.getAll());
     }
 
-    @GetMapping("?publicationid={id}")
-    public PetResource ReadPetsByPublicationId(@PathVariable("id") Long id) {
-        return  mapper.toResource(petService.ReadPetsByPublicationId(id));
+    @GetMapping("/publicationId={id}")
+    public Collection<Pet> ReadPetsByPublicationId(@PathVariable("id") Long id) {
+        return  petService.ReadPetsByPublicationId(id);
     }
 
     @PostMapping

@@ -1,4 +1,5 @@
 package com.AdoptMeYa.Back.adoptme.resource;
+import com.AdoptMeYa.Back.adoptme.domain.model.entity.User;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -32,7 +33,7 @@ public class CreatePetResource {
     private String gender;
 
     @NotNull
-    private int userId;
+    private User user;
 
     private Publication publication;
 }
