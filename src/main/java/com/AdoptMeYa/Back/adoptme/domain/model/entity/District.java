@@ -16,6 +16,7 @@ import java.util.List;
 
 public class District extends AuditModel{
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -75,7 +76,7 @@ public class PetImpl implements PetService {
     }
 
     @Override
-    public Pet ReadPetsByPublicationId(Long id){
+    public Collection<Pet> ReadPetsByPublicationId(Long id){
         return petRepository.ReadPetsByPublicationId(id);
     }
 

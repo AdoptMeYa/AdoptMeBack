@@ -2,6 +2,7 @@ package com.AdoptMeYa.Back.adoptme.resource;
 
 import com.AdoptMeYa.Back.adoptme.domain.model.entity.Publication;
 
+import com.AdoptMeYa.Back.adoptme.domain.model.entity.User;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,4 +17,6 @@ public class PetResource {
     private Integer age;
     private String isAdopted;
     private String gender;
+    private User user;
+    private Publication publication;
 }

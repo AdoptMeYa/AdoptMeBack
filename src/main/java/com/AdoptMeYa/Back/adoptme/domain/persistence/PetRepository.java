@@ -5,8 +5,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.Collection;
+
 @Repository
 public interface PetRepository extends JpaRepository<Pet, Long> {
-    @Query(nativeQuery = false,value = " SELECT p FROM Pet p WHERE p.publication.id = :id")
-    Pet ReadPetsByPublicationId(@Param("id")Long id);
+
+
+    @Query(value =
+            " SELECT r FROM Pet r WHERE r.id = 1")
+    Collection<Pet> ReadPetsByPublicationId(@Param("id")Long id);
 }

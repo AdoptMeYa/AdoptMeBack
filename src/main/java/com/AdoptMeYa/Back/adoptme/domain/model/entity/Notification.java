@@ -32,6 +32,7 @@ import lombok.With;
 
 public class Notification extends AuditModel {
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull

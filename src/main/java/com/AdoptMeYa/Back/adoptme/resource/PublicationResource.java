@@ -1,5 +1,7 @@
 package com.AdoptMeYa.Back.adoptme.resource;
 
+import com.AdoptMeYa.Back.adoptme.domain.model.entity.Pet;
+import com.AdoptMeYa.Back.adoptme.domain.model.entity.User;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +10,6 @@ import lombok.Setter;
 public class PublicationResource {
     private Long id;
     private String comment;
-    private int userId;
-    private int petId;
+    private User user;
+    private Pet pet;
 }
