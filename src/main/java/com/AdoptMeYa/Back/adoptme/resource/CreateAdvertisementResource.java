@@ -19,5 +19,5 @@ public class CreateAdvertisementResource {
     @NotNull
     private Boolean promoted;
     @NotNull
-    private User user;
+    private int userId;
 }

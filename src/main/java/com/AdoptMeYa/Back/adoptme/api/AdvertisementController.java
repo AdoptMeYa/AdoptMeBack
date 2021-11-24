@@ -23,8 +23,9 @@ public class AdvertisementController {
 
     @GetMapping("/{advertisementId}")
     public AdvertisementResource getAdvertisementById(@PathVariable("advertisementId") Long advertisementId) {
-    return mapper.toResource(advertisementService.listAdvertisementsByUserId(advertisementId));
-}
+        return mapper.toResource(advertisementService.getById(advertisementId));
+    }
+
     @PostMapping
     public AdvertisementResource createPost(@RequestBody CreateAdvertisementResource request) {
         return mapper.toResource(advertisementService.create(mapper.toModel(request)));

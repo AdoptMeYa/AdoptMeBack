@@ -74,4 +74,9 @@ public class AdvertisementImpl implements AdvertisementService {
     public List<Advertisement> ListAllAdvertisements() {
         return _advertisementRepository.findAll();
     }
+
+    @Override
+    public Advertisement getById(Long id) {
+        return _advertisementRepository.getById(id);
+    }
 }

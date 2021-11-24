@@ -19,9 +19,7 @@ public class Advertisement extends AuditModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+
 
     @NotNull
     @Size(max = 100)
@@ -45,4 +43,7 @@ public class Advertisement extends AuditModel {
     @Column(unique = false)
     private Boolean promoted;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 }
