@@ -11,6 +11,7 @@ public interface DistrictService {
 
     Page<District> getAll(Pageable pageable);
 
+    List<District> GetDistrictsByDistrict(String district);
     District create(District district);
 
     District getById(Long id);

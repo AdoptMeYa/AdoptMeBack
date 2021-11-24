@@ -33,6 +33,11 @@ public class DistrictImpl implements DistrictService {
     public Page<District> getAll(Pageable pageable){return districtRepository.findAll(pageable);}
 
     @Override
+    public List<District> GetDistrictsByDistrict(String district) {
+        return districtRepository.ReadDistrictsByDistrict(district);
+    }
+
+    @Override
     public District create(District district){return districtRepository.save(district);}
 
     @Override
