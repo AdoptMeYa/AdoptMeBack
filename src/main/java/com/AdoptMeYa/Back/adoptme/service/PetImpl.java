@@ -81,4 +81,44 @@ public class PetImpl implements PetService {
         return petRepository.ReadPetsByPublicationId(id);
     }
 
+    @Override
+    public List<Pet> ReadPetsByUserId(Long id){
+        return petRepository.ReadPetsByUserId(id);
+    }
+
+    @Override
+    public List<Pet> ReadPetsByAttention(String attention) {
+        return petRepository.ReadPetsByAttention(attention);
+    }
+
+    @Override
+    public List<Pet> ReadPetsByType(String type) {
+        return petRepository.ReadPetsByType(type);
+    }
+
+    @Override
+    public List<Pet> ReadPetsByGender(String gender) {
+        return petRepository.ReadPetsByGender(gender);
+    }
+
+    @Override
+    public List<Pet> ReadPetsByGenderAttention(String gender, String attention) {
+        return petRepository.ReadPetsByGenderAttention(gender, attention);
+    }
+
+    @Override
+    public List<Pet> ReadPetsByTypeAttention(String type, String attention) {
+        return petRepository.ReadPetsByTypeAttention(type, attention);
+    }
+
+    @Override
+    public List<Pet> ReadPetsByTypeGender(String type, String gender) {
+        return petRepository.ReadPetsByTypeGender(type, gender);
+    }
+
+    @Override
+    public List<Pet> ReadPetsByTypeGenderAttention(String type, String gender, String attention) {
+        return petRepository.ReadPetsByTypeGenderAttention(type, gender, attention);
+    }
+
 }

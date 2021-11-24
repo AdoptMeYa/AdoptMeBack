@@ -37,6 +37,12 @@ public class PetController {
         return  mapper.toListResource(petService.ReadPetsByPublicationId(id));
     }
 
+    @GetMapping("/userId={id}")
+    public List<PetResource> ReadPetsByUserId(@PathVariable("id") Long id) {
+        return  mapper.toListResource(petService.ReadPetsByUserId(id));
+    }
+
+
     @PostMapping
     public PetResource createPet(@RequestBody CreatePetResource request){
         return mapper.toResource(petService.create(mapper.toModel(request)));
@@ -55,6 +61,42 @@ public class PetController {
     @DeleteMapping("{id}")
     public ResponseEntity<?> deletePost(@PathVariable Long id) {
         return petService.delete(id);
+    }
+
+    @GetMapping("/attention={attention}")
+    public List<PetResource> ReadPetsByAttention(@PathVariable("attention") String attention) {
+        return mapper.toListResource(petService.ReadPetsByAttention(attention));
+    }
+
+    @GetMapping("/type={type}")
+    public List<PetResource> ReadPetsByType(@PathVariable("type") String type) {
+        return mapper.toListResource(petService.ReadPetsByType(type));
+    }
+
+    @GetMapping("/gender={gender}")
+    public List<PetResource> ReadPetsByGender(@PathVariable("gender") String gender) {
+        return mapper.toListResource(petService.ReadPetsByGender(gender));
+    }
+
+    @GetMapping("/gender={gender}&attention={attention}")
+    public List<PetResource> ReadPetsByGenderAttention(@PathVariable String gender, @PathVariable String attention) {
+        return mapper.toListResource(petService.ReadPetsByGenderAttention(gender, attention));
+    }
+
+    @GetMapping("/type={type}&attention={attention}")
+    public List<PetResource> ReadPetsByTypeAttention(@PathVariable String type, @PathVariable String attention) {
+        return mapper.toListResource(petService.ReadPetsByTypeAttention(type, attention));
+    }
+
+    @GetMapping("/type={type}&attention={gender}")
+    public List<PetResource> ReadPetsByTypeGender(@PathVariable String type, @PathVariable String gender) {
+        return mapper.toListResource(petService.ReadPetsByTypeGender(type, gender));
+    }
+
+    @GetMapping("/type={type}&attention={gender}&attention={attention}")
+    public List<PetResource> ReadPetsByTypeGenderAttention(@PathVariable String type, @PathVariable String gender,
+                                                           @PathVariable String attention) {
+        return mapper.toListResource(petService.ReadPetsByTypeGenderAttention(type, gender, attention));
     }
 
 
