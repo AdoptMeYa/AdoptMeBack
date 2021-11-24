@@ -24,9 +24,9 @@ public class DistrictMapper implements Serializable {
         return mapper.map(resource, District.class);
     }
 
-    public Page<DistrictResource> modelListToPage(List<District>modelList, Pageable pageable)
+    public List<DistrictResource> toListResource(List<District>modelList)
     {
-         return new PageImpl<>(mapper.mapList(modelList,DistrictResource.class),pageable,modelList.size());
+         return mapper.mapList(modelList,DistrictResource.class);
     }
     public District toModel(UpdateDistrictResource resource)
     {
