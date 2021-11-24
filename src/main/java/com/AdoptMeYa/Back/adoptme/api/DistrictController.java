@@ -27,7 +27,11 @@ public class DistrictController {
     {
         return mapper.toListResource(districtService.getAll());
     }
-
+    @GetMapping("/district={district}")
+    public List<DistrictResource>GetDistrictsByDistrict(@PathVariable("district")String district)
+    {
+        return mapper.toListResource(districtService.GetDistrictsByDistrict(district));
+    }
     @PostMapping
     public DistrictResource createDistrict(@RequestBody CreateDistrictResource request)
     {
