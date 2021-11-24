@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.util.List;
 
 @Setter
 @Getter
@@ -25,6 +26,4 @@ public class District extends AuditModel{
     @NotNull
     @NotBlank
     private String description;
-
-
 }

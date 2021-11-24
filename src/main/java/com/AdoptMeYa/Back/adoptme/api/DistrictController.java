@@ -10,6 +10,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/districts")
@@ -21,9 +23,9 @@ public class DistrictController {
     private DistrictMapper mapper;
 
     @GetMapping
-    public Page<DistrictResource>getAll(Pageable pageable)
+    public List<DistrictResource> getAll()
     {
-        return mapper.modelListToPage(districtService.getAll(),pageable);
+        return mapper.toListResource(districtService.getAll());
     }
 
     @PostMapping
